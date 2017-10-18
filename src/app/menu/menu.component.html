@@ -1,9 +1,7 @@
 <div>
-    <p>
-      menu works!
-    </p>
-    <nav>
-      <a routerLink="projects/index" routerLinkActive="active">Proyectos</a>
-      <a routerLink="projects/list" routerLinkActive="active">Ver Proyectos</a>
-    </nav>
+    <button md-button [mdMenuTriggerFor]="menu">Menu principal</button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item routerLink="projects/index" routerLinkActive="active">Proyectos</button>
+      <button md-menu-item routerLink="projects/list" routerLinkActive="active">Ver Proyectos</button>
+    </md-menu>
 </div>
