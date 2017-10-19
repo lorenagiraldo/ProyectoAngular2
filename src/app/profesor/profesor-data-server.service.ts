@@ -22,7 +22,7 @@ export class ProfesorDataServerService {
 
   guardarProfesor(profesor: Profesor)
   {
-    let cadena:string=`?nombre=${profesor.nombre}&cedula=${profesor.cedula}&correo=${profesor.correo}&facultad${profesor.facultad}`;
+    let cadena:string=`?nombre=${profesor.nombre}&cedula=${profesor.cedula}&correo=${profesor.correo}&facultad=${profesor.facultad}`;
     this.http.get('http://localhost:49475/Profesor/guardarProfesor'+cadena).subscribe(data =>
   {
   });
