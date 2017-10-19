@@ -1,3 +1,17 @@
-<p>
-  list works!
-</p>
+<table border="1">
+    <tr>
+      <td>Titulo</td>
+      <td>Objetivo</td>
+      <td>Tipo</td>
+      <td>Duración</td>
+      <td>Lugar</td>
+    </tr>
+    <tr *ngFor="let proyecto of proyectoService.listaProyectos">
+      <td>{{proyecto.titulo}}</td>
+      <td>{{proyecto.objetivo}}</td>
+      <td>{{proyecto.tipo}}</td>
+      <td>{{proyecto.duracion}}</td>
+      <td>{{proyecto.lugar}}</td>
+    </tr>
+  </table>
+  <br/>
