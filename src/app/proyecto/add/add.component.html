@@ -34,19 +34,6 @@
         </td>
       </tr>
       <tr>
-        <td colspan="2">
-          <br/>
-          <div class="button-row">
-            <button md-raised-button color="primary" (click)="nuevoProfesor()">
-              New
-            </button>
-            <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="guardarProfesor()">
-              Save
-            </button>
-          </div>
-        </td>
-      </tr>
-      <tr>
         <td>
           <md-form-field>
             <input mdInput placeholder="Duracion" required [(ngModel)]="proyecto.duracion" name="duracion" #duracion="ngModel" />
