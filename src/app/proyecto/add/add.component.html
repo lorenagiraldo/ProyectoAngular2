@@ -1,0 +1,87 @@
+<form #addForm="ngForm">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <md-form-field>
+            <input mdInput placeholder="Titulo" required [(ngModel)]="proyecto.titulo" name="titulo" #titulo="ngModel" />
+            <md-error *ngIf="!titulo.valid && !titulo.pristine">
+              Por favor ingresar un titulo valido
+            </md-error>
+          </md-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-form-field>
+            <input mdInput placeholder="Objetivo" required [(ngModel)]="proyecto.objetivo" name="objetivo" #objetivo="ngModel" />
+          </md-form-field>
+          <md-error *ngIf="!objetivo.valid && !objetivo.pristine">
+            Por favor ingresar un objetivo valido
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-select placeholder="Tipo" required [(ngModel)]="proyecto.tipo" name="tipo" #tipo="ngModel">
+            <md-option *ngFor="let tipo of listaTipo" [value]="tipo.value">
+              {{ tipo.label }}
+            </md-option>
+          </md-select>
+          <md-error *ngIf="!tipo.valid">
+            Por favor ingresar un tipo de proyecto valido
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <br/>
+          <div class="button-row">
+            <button md-raised-button color="primary" (click)="nuevoProfesor()">
+              New
+            </button>
+            <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="guardarProfesor()">
+              Save
+            </button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-form-field>
+            <input mdInput placeholder="Duracion" required [(ngModel)]="proyecto.duracion" name="duracion" #duracion="ngModel" />
+          </md-form-field>
+          <md-error *ngIf="!duracion.valid && !duracion.pristine">
+            Por favor ingresar una duracion valida
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-select placeholder="Lugar" required [(ngModel)]="proyecto.lugar" name="lugar" #lugar="ngModel">
+            <md-option *ngFor="let lugar of listaLugar" [value]="lugar.value">
+              {{ lugar.label }}
+            </md-option>
+          </md-select>
+          <md-error *ngIf="!lugar.valid">
+            Por favor ingresar un lugar valido
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <br/>
+          <div class="button-row">
+            <button md-raised-button color="primary" (click)="nuevoProyecto()">
+              New
+            </button>
+
+            <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="guardarProyecto()">
+              Save
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

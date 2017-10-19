@@ -38,27 +38,27 @@ import {
   MdTooltipModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { AddComponent as TeachersAddComponent } from './teachers/add/add.component';
-import { ListComponent as TeachersListComponent} from './teachers/list/list.component';
-import { IndexComponent as TeachersIndexComponent} from './teachers/index/index.component';
-import { AddComponent as ProjectsAddComponent } from './projects/add/add.component';
-import { ListComponent as ProjectsListComponent} from './projects/list/list.component';
-import { IndexComponent as ProjectsIndexComponent} from './projects/index/index.component';
+import { AddComponent as ProfesorAddComponent } from './profesor/add/add.component';
+import { ListComponent as ProfesorListComponent} from './profesor/list/list.component';
+import { IndexComponent as ProfesorIndexComponent} from './profesor/index/index.component';
+import { AddComponent as ProyectoAddComponent } from './proyecto/add/add.component';
+import { ListComponent as ProyectoListComponent} from './proyecto/list/list.component';
+import { IndexComponent as ProyectoIndexComponent} from './proyecto/index/index.component';
 import { MenuComponent } from './menu/menu.component';
 import { CurrentOptionComponent } from './current-option/current-option.component';
 
-const appRoutes: Routes=[{path: 'projects/index', component: ProjectsIndexComponent},
-{path: 'projects/list', component: ProjectsListComponent}];
+const appRoutes: Routes=[{path: 'proyecto/index', component: ProyectoIndexComponent},
+{path: 'proyecto/list', component: ProyectoListComponent}];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TeachersAddComponent,
-    TeachersListComponent,
-    TeachersIndexComponent,
-    ProjectsAddComponent,
-    ProjectsListComponent,
-    ProjectsIndexComponent,
+    ProfesorAddComponent,
+    ProfesorListComponent,
+    ProfesorIndexComponent,
+    ProyectoAddComponent,
+    ProyectoListComponent,
+    ProyectoIndexComponent,
     MenuComponent,
     CurrentOptionComponent
   ],

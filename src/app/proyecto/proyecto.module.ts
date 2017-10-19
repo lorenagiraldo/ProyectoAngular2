@@ -10,4 +10,4 @@ import { IndexComponent } from './index/index.component';
   ],
   declarations: [AddComponent, ListComponent, IndexComponent]
 })
-export class TeachersModule { }
+export class ProyectoModule { }

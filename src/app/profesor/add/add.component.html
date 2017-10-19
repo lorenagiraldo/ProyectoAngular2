@@ -1,0 +1,73 @@
+<form #addForm="ngForm">
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <md-form-field>
+            <input mdInput placeholder="Nombre" required [(ngModel)]="profesor.nombre" name="nombre" #nombre="ngModel" />
+            <md-error *ngIf="!nombre.valid && !nombre.pristine">
+              Por favor ingresar un nombre valido
+            </md-error>
+          </md-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-form-field>
+            <input mdInput placeholder="Cedula" required [(ngModel)]="profesor.cedula" name="cedula" #cedula="ngModel" />
+          </md-form-field>
+          <md-error *ngIf="!cedula.valid && !cedula.pristine">
+            Por favor ingresar una cedula valida
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-form-field>
+            <input mdInput placeholder="Correo" required [(ngModel)]="profesor.correo" name="correo" #correo="ngModel" />
+          </md-form-field>
+          <md-error *ngIf="!correo.valid && !correo.pristine">
+            Por favor ingresar un correo valido
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-select placeholder="Facultad" required [(ngModel)]="profesor.facultad" name="facultad" #facultad="ngModel">
+            <md-option *ngFor="let facultad of listaFacultad" [value]="facultad.value">
+              {{ facultad.label }}
+            </md-option>
+          </md-select>
+          <md-error *ngIf="!facultad.valid">
+            Please enter a valid facultad
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <md-select placeholder="Proyecto" required [(ngModel)]="profesor.proyecto" name="proyecto" #proyecto="ngModel">
+            <md-option *ngFor="let proyecto of listaProyecto" [value]="proyecto.value">
+              {{ proyecto.label }}
+            </md-option>
+          </md-select>
+          <md-error *ngIf="!proyecto.valid">
+            Please enter un valido proyecto
+          </md-error>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <br/>
+          <div class="button-row">
+            <button md-raised-button color="primary" (click)="nuevoProfesor()">
+              New
+            </button>
+            <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="guardarProfesor()">
+              Save
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>
