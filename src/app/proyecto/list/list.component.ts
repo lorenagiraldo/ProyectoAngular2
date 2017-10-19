@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProyectoDataServerService } from '../proyecto-data-server.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private proyectoService:ProyectoDataServerService) { }
 
   ngOnInit() {
+    this.proyectoService.cargarProyectos();
   }
 
 }
