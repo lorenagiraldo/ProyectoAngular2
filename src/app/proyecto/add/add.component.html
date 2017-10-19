@@ -25,7 +25,7 @@
         <td>
           <md-select placeholder="Tipo" required [(ngModel)]="proyecto.tipo" name="tipo" #tipo="ngModel">
             <md-option *ngFor="let tipo of listaTipo" [value]="tipo.value">
-              {{ tipo.label }}
+              {{ tipo.value }}
             </md-option>
           </md-select>
           <md-error *ngIf="!tipo.valid">
@@ -47,7 +47,7 @@
         <td>
           <md-select placeholder="Lugar" required [(ngModel)]="proyecto.lugar" name="lugar" #lugar="ngModel">
             <md-option *ngFor="let lugar of listaLugar" [value]="lugar.value">
-              {{ lugar.label }}
+              {{ lugar.value }}
             </md-option>
           </md-select>
           <md-error *ngIf="!lugar.valid">
