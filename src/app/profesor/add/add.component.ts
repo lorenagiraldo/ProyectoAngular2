@@ -1,39 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import {Profesor} from '../profesor';
+import { ProfesorDataServerService } from '../profesor-data-server.service';
 
 @Component({
-  selector: 'app-add',
+  selector: 'profesor-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
 
-  public teacher: Profesor;
+  profesor: Profesor;
+  mensaje="N/A";
 
   listaFacultad=[
-    {value: 'CIENCIAS JURIDICAS', label:'CIENCIAS JURIDICAS' },
-    {value: 'CIENCIAS EXACTAS', label:'CIENCIAS EXACTASS' },
-    {value: 'CIENCIAS SALUD', label:'CIENCIAS JURIDICAS' },
-    {value: 'CIENCIAS COMPUTACIONALES', label:'CIENCIAS COMPUTACIONALES' },
-    {value: 'CIENCIAS SOCIALES', label:'CIENCIAS SOCIALES' },
-
+    {value: 'CIENCIAS JURIDICAS'},
+    {value: 'CIENCIAS EXACTAS'},
+    {value: 'CIENCIAS SALUD'},
+    {value: 'CIENCIAS COMPUTACIONALES'},
+    {value: 'CIENCIAS SOCIALES'}
   ]
 
-  constructor() { 
+  constructor(private profesorService:ProfesorDataServerService) { 
   }
 
   ngOnInit() {
-    this.teacher=new Profesor("","","","");
+    this.profesor=new Profesor("","","","","");
   }
 
   nuevoProfesor()
   {
-    this.teacher=new Profesor("","","","");
+    this.profesor=new Profesor("","","","", "");
   }
 
   guardarProfesor()
   {
-    this.customerService.saveCustomer(this.customer);
+    this.mensaje=this.profesorService.guardarProfesor(this.profesor);
+    this.profesorService.cargarProfesores();
   }
 
 }

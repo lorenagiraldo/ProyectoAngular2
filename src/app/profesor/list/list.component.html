@@ -1,3 +1,17 @@
-<p>
-  list works!
-</p>
+<table border="1">
+    <tr>
+      <td>Nombre</td>
+      <td>Cedula</td>
+      <td>Correo</td>
+      <td>Facultad</td>
+      <td>Proyecto</td>
+    </tr>
+    <tr *ngFor="let profesor of profesorService.listaProfesores">
+      <td>{{profesor.nombre}}</td>
+      <td>{{profesor.cedula}}</td>
+      <td>{{profesor.correo}}</td>
+      <td>{{profesor.facultad}}</td>
+      <td>{{profesor.proyectoId}}</td>
+    </tr>
+  </table>
+  <br/>

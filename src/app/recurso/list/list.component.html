@@ -1,0 +1,15 @@
+<table border="1">
+    <tr>
+      <td>Fuente</td>
+      <td>Valor</td>
+      <td>Observacion</td>
+      <td>Proyecto</td>
+    </tr>
+    <tr *ngFor="let recurso of recursoService.listaRecursos">
+      <td>{{recurso.fuente}}</td>
+      <td>{{recurso.valor}}</td>
+      <td>{{recurso.observacion}}</td>
+      <td>{{recurso.proyectoId}}</td>
+    </tr>
+  </table>
+  <br/>

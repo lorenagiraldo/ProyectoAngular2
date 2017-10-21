@@ -1,0 +1,67 @@
+<form #addForm="ngForm">
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <md-form-field>
+              <input mdInput placeholder="Fuente" required [(ngModel)]="recurso.fuente" name="fuente" #fuente="ngModel" />
+              <md-error *ngIf="!fuente.valid && !fuente.pristine">
+                Por favor ingresar un titulo valido
+              </md-error>
+            </md-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <md-form-field>
+              <input mdInput placeholder="Valor" required [(ngModel)]="recurso.valor" name="valor" #valor="ngModel" />
+            </md-form-field>
+            <md-error *ngIf="!valor.valid && !valor.pristine">
+              Por favor ingresar un valor valido
+            </md-error>
+          </td>
+        </tr>
+        <tr>
+            <td>
+              <md-form-field>
+                <input mdInput placeholder="Observacion" required [(ngModel)]="recurso.observacion" name="observacion" #observacion="ngModel" />
+                <md-error *ngIf="!observacion.valid && !observacion.pristine">
+                  Por favor ingresar una observacion valida
+                </md-error>
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <md-select placeholder="Proyecto" required [(ngModel)]="recurso.proyectoId" name="proyectoId" #proyectoId="ngModel">
+                  <md-option *ngFor="let proyecto of recursoService.listaProyectos" [value]="proyecto.titulo">
+                    {{ proyecto.titulo }}
+                  </md-option>
+                </md-select>
+                <md-error *ngIf="!proyectoId.valid">
+                  Por favor ingresar un proyecto valido
+                </md-error>
+              </td>
+            </tr>
+        <tr>
+          <td colspan="2">
+            <br/>
+            <div class="button-row">
+              <button md-raised-button color="primary" (click)="nuevoRecurso()">
+                Nuevo
+              </button>
+              <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="guardarRecurso()">
+                Guardar
+              </button>
+            </div>
+          </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                {{mensaje}}!
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>

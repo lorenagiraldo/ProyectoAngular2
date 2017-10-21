@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -37,28 +37,25 @@ import {
   MdToolbarModule,
   MdTooltipModule} from '@angular/material';
 
+import {HttpClientModule} from '@angular/common/http';
+import {CdkTableModule} from '@angular/cdk/table';
+import {ProyectoModule} from './proyecto/proyecto.module';
+import {ProfesorModule} from './profesor/profesor.module';
+import {RecursoModule} from './recurso/recurso.module';
 import { AppComponent } from './app.component';
-import { AddComponent as ProfesorAddComponent } from './profesor/add/add.component';
-import { ListComponent as ProfesorListComponent} from './profesor/list/list.component';
-import { IndexComponent as ProfesorIndexComponent} from './profesor/index/index.component';
-import { AddComponent as ProyectoAddComponent } from './proyecto/add/add.component';
-import { ListComponent as ProyectoListComponent} from './proyecto/list/list.component';
-import { IndexComponent as ProyectoIndexComponent} from './proyecto/index/index.component';
 import { MenuComponent } from './menu/menu.component';
 import { CurrentOptionComponent } from './current-option/current-option.component';
+import { RouterModule, Routes } from '@angular/router';
 
+import { IndexComponent as ProfesorIndexComponent} from './profesor/index/index.component';
+import { IndexComponent as ProyectoIndexComponent} from './proyecto/index/index.component';
+import { IndexComponent as RecursoIndexComponent} from './recurso/index/index.component';
 const appRoutes: Routes=[{path: 'proyecto/index', component: ProyectoIndexComponent},
-{path: 'proyecto/list', component: ProyectoListComponent}];
+{path: 'profesor/index', component: ProfesorIndexComponent}, {path: 'recurso/index', component: RecursoIndexComponent}];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfesorAddComponent,
-    ProfesorListComponent,
-    ProfesorIndexComponent,
-    ProyectoAddComponent,
-    ProyectoListComponent,
-    ProyectoIndexComponent,
     MenuComponent,
     CurrentOptionComponent
   ],
@@ -96,6 +93,10 @@ const appRoutes: Routes=[{path: 'proyecto/index', component: ProyectoIndexCompon
     MdToolbarModule,
     MdTooltipModule,
     BrowserAnimationsModule,
+    ProyectoModule,
+    ProfesorModule,
+    RecursoModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

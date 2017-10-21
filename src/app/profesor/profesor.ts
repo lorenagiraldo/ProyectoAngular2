@@ -1,4 +1,4 @@
 export class Profesor{
-    constructor(public nombre:string, public cedula:string, public correo:string, public facultad:string)
+    constructor(public nombre:string, public cedula:string, public correo:string, public facultad:string, public proyectoId: string)
     {}
 }

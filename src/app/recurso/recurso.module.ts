@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ProyectoDataServerService} from './proyecto-data-server.service';
+import {RecursoDataServerService} from './recurso-data-server.service';
 import { CdkTableModule } from '@angular/cdk/table';
 import { FormsModule }   from '@angular/forms';
 import { AddComponent } from './add/add.component';
 import { ListComponent } from './list/list.component';
-import {IndexComponent} from './index/index.component';
+import { IndexComponent } from './index/index.component';
 
 import {  
   MdAutocompleteModule,
@@ -78,9 +78,8 @@ import {
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule
-
   ],
   declarations: [AddComponent, ListComponent, IndexComponent],
-  providers:[ProyectoDataServerService]
+  providers:[RecursoDataServerService]
 })
-export class ProyectoModule { }
+export class RecursoModule { }

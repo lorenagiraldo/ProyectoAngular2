@@ -3,13 +3,14 @@ import { Proyecto } from '../proyecto';
 import {ProyectoDataServerService} from '../proyecto-data-server.service'
 
 @Component({
-  selector: 'app-add',
+  selector: 'proyecto-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
 
-  public proyecto: Proyecto;
+  mensaje="N/A";
+  proyecto: Proyecto;
   
   listaTipo = [
     { value: 'CURSO' },
@@ -30,7 +31,8 @@ export class AddComponent implements OnInit {
   ];
   
 
-  constructor(private proyectoService:ProyectoDataServerService) { }
+  constructor(private proyectoService:ProyectoDataServerService) {
+   }
 
   ngOnInit() {
     this.proyecto= new Proyecto("","","",-1,"");
@@ -41,9 +43,10 @@ export class AddComponent implements OnInit {
     this.proyecto= new Proyecto("","","",-1,"");
   }
 
-  guardarProyecto(proyecto: Proyecto)
+  guardarProyecto()
   {
-
+    this.mensaje=this.proyectoService.guardarProyecto(this.proyecto);
+    this.proyectoService.cargarProyectos();
   }
 
 }

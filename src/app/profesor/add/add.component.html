@@ -35,7 +35,7 @@
         <td>
           <md-select placeholder="Facultad" required [(ngModel)]="profesor.facultad" name="facultad" #facultad="ngModel">
             <md-option *ngFor="let facultad of listaFacultad" [value]="facultad.value">
-              {{ facultad.label }}
+              {{ facultad.value }}
             </md-option>
           </md-select>
           <md-error *ngIf="!facultad.valid">
@@ -45,13 +45,13 @@
       </tr>
       <tr>
         <td>
-          <md-select placeholder="Proyecto" required [(ngModel)]="profesor.proyecto" name="proyecto" #proyecto="ngModel">
-            <md-option *ngFor="let proyecto of listaProyecto" [value]="proyecto.value">
-              {{ proyecto.label }}
+          <md-select placeholder="Proyecto" required [(ngModel)]="profesor.proyectoId" name="proyectoId" #proyectoId="ngModel">
+            <md-option *ngFor="let proyecto of profesorService.listaProyectos" [value]="proyecto.titulo">
+              {{ proyecto.titulo }}
             </md-option>
           </md-select>
-          <md-error *ngIf="!proyecto.valid">
-            Please enter un valido proyecto
+          <md-error *ngIf="!proyectoId.valid">
+            Por favor ingresar un proyecto valido
           </md-error>
         </td>
       </tr>
@@ -60,13 +60,19 @@
           <br/>
           <div class="button-row">
             <button md-raised-button color="primary" (click)="nuevoProfesor()">
-              New
+              Nuevo profesor
             </button>
             <button md-raised-button color="primary" [disabled]="!addForm.valid" (click)="guardarProfesor()">
-              Save
+              Guardar profesor
             </button>
           </div>
         </td>
+      </tr>
+      <br>
+      <tr>
+          <td>
+              {{mensaje}}!
+          </td>
       </tr>
     </tbody>
   </table>
